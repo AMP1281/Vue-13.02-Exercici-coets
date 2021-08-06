@@ -1,12 +1,11 @@
 <template>
 
   <div class="about mt-5">
-    
-    <div class="container">
-      
-    <ButtonAnterior/>
-    <RocketDetalles/>
 
+    <div class="container">
+
+    <ButtonAnterior/>
+    <AllRockets/>
 
     </div>
 
@@ -14,15 +13,18 @@
 </template>
 
 <script lang="ts">
+
 import { Component, Vue } from 'vue-property-decorator';
-import RocketDetalles from '../components/RocketDetalles.vue';
+
+import AllRockets from '../components/AllRockets.vue';
 import ButtonAnterior from '../components/ButtonAnterior.vue';
 
 @Component({
   components: {
-    RocketDetalles,
+    AllRockets,
     ButtonAnterior
   },
 })
-export default class About extends Vue {}
+
+export default class AllRocketsView extends Vue {}
 </script>
