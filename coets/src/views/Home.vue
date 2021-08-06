@@ -1,16 +1,16 @@
 <template>
   <div>
-    <HelloWorld/>
+    <Buttons/>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import HelloWorld from '@/components/HelloWorld.vue';
+import Buttons from '../components/Buttons.vue';
 
 @Component({
   components: {
-    HelloWorld,
+    Buttons,
   },
 })
 export default class Home extends Vue {}
