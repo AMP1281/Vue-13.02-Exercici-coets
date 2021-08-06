@@ -6,10 +6,10 @@
 
                 <b-card class="sombra">
                     <b-card-text class="d-flex flex-column align-items-center">
-                        <h5 class="mb-4"></h5>
+                        <h5 class="mb-4">   !!!!!!!!    </h5>
                             <div class="row w-100 py-2">
                                 <div class="col-6">
-                                    Email:
+                                   !!!!!!
                                 </div>
                                 <div class="col-6">
                                     
@@ -31,7 +31,7 @@ import { Component, Vue } from 'vue-property-decorator';
 
 @Component
 export default class RocketDetalles extends Vue {
-    
+
 
 }
 

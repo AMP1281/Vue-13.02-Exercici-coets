@@ -11,19 +11,7 @@
 
 <script lang="ts">
 
-export default Vue.extend(options:{
 
-  components:{
-    Buttons
-  },
-  computed:{
-    helloMessage:{
-      get(): string {
-        return this.$store.state.user.email;
-      }
-    }
-  }
-});
 
 </script>
 
