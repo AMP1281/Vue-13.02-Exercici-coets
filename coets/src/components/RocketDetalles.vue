@@ -6,13 +6,13 @@
 
                 <b-card class="sombra">
                     <b-card-text class="d-flex flex-column align-items-center">
-                        <h5 class="mb-4">   {{getCoet.name}}    </h5>
+                        <h5 class="mb-4">   {{arrayDetalles.name}}    </h5>
                             <div class="row w-100 py-2">
                                 <div class="col-6">
                                     id:
                                 </div>
                                 <div class="col-6">
-                                    {{getCoet.id}}
+                                    {{arrayDetalles.id}}
                                 </div>
                             </div>
                             <div class="row w-100 py-2">
@@ -20,7 +20,7 @@
                                     Code:
                                 </div>
                                 <div class="col-6">
-                                    {{getCoet.codi}}
+                                    {{arrayDetalles.codi}}
                                 </div>
                             </div>
                             <div class="row w-100 py-2">
@@ -30,14 +30,20 @@
                                 <div class="col-6">
                                     <ul class="row list-unstyled">
                                         <li class="col-md-3 d-flex align-items-stretch justify-content-center" 
-                                            v-for="item in getCoet.propulsors" :key="item.id">
+                                            v-for="item in arrayDetalles.propulsors" :key="item.id">
                                             <p>{{ item}}</p>
                                         </li>
                                     </ul>
                                 </div>
                             </div>
+
                     </b-card-text>
                 </b-card>
+
+                {{getPropulsorssss}}
+
+            
+
     </div>
   </div>
 </template>
@@ -60,15 +66,18 @@ interface WithRoute extends Vue{
 export default class User extends Vue {
 
     $route: any
-    coet:any=''
+    coet: any=''
+    test: any[]=[]
 
-    hola:any[]= this.$store.state.coets
 
     id=this.$route.params.id
 
-    get getCoet():any {
-        return this.$store.getters['getCoets'](this.id);
-  }
+    arrayDetalles:any[]= this.$store.getters['getCoets'](this.id)
+
+    getPropulsorssss(){
+       return this.arrayDetalles.map((coets) => coets.propulsors);
+    }
+
 
 }
 

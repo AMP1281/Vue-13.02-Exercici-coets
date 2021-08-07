@@ -6,7 +6,7 @@ Vue.use(Vuex)
 const store = new Vuex.Store({
 
   state:{
-    test:"holaaa desde store",
+
     coets: [{
       "id":1,
       "name": "Apolo",
@@ -21,15 +21,38 @@ const store = new Vuex.Store({
       }],
 
       aparecer1: false,
-      aparecer2: false
+      aparecer2: false,
+
+      arrayPropulsors:[]
 
   },
 
+  //Calcular la potencia màxima
+  
+
+
   getters:{
+
+    //Coet per id
     getCoets: (state) => (id:any) => {
       return state.coets.find((coet:any) => coet.id === id)
     },
-  }
+
+    //Array de propulsors
+    getPropulsors(state){
+       return state.coets.map((coets) => coets.propulsors)
+    },
+
+    PotenciaMàxima: (state) => {
+      const propulsorsTest = state.coets.propulsors
+      return propulsorsTest.reduce((accumulator:any, currentValue:any) => {
+        return accumulator + currentValue;
+      }, 0);
+    },
+
+
+  },
+
 })
 
 export default store
