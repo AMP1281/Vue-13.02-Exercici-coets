@@ -17,8 +17,8 @@
                 <button @click="animar1" class="btn btn-warning col-auto mx-2">Accelerate rocket 1</button>
                 <button @click="animar2" class="btn btn-warning col-auto mx-2">Accelerate rocket 2</button>
 
-                <button class="btn btn-warning col-auto mx-2">Break rocket 1</button>
-                <button class="btn btn-warning col-auto mx-2">Break rocket 2</button>
+                <button @click="desAnimar1" class="btn btn-warning col-auto mx-2">Break rocket 1</button>
+                <button @click="desAnimar2" class="btn btn-warning col-auto mx-2">Break rocket 2</button>
             </div>
 
             <div class="row py-2">
@@ -57,11 +57,6 @@
 <script lang="ts">
 
     import { Component, Vue } from 'vue-property-decorator';
-/*     import {Route} from 'vue-router'
-
-    interface WithRoute extends Vue{
-	    $route: Route
-    } */
 
     @Component
     export default class Buttons extends Vue {
@@ -81,12 +76,22 @@
       }
 
       animar1(){
-        this.anim1HTML.classList.add('animacion1');
+        document.getElementById('idAnimacion1').classList.add('animacion1');
       }
 
       animar2(){
-        this.anim2HTML.classList.add('animacion2');
+        document.getElementById('idAnimacion2').classList.add('animacion2');
       }
+
+      desAnimar1(){
+        document.getElementById('idAnimacion1').classList.remove('animacion1');
+      }
+
+      desAnimar2(){
+        document.getElementById('idAnimacion2').classList.remove('animacion2');
+      }
+
+
 
 
     }
@@ -104,7 +109,7 @@
 
 .animacion1{
     animation-name: mianimacion1;
-    animation-duration:4s;
+    animation-duration: 4s;
     animation-iteration-count: infinite;
     position: relative;
 }
@@ -117,7 +122,7 @@
 
 .animacion2{
     animation-name: mianimacion2;
-    animation-duration:4s;
+    animation-duration: 3s;
     animation-iteration-count: infinite;
     position: relative;
 }
