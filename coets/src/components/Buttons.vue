@@ -9,16 +9,16 @@
             <h2 class="text-danger pb-2">Rockets!</h2>
 
             <div class="row py-2">
-                <button @click="this.$store.state.aparecer1 = !this.$store.state.aparecer1" class="btn btn-warning col-auto mx-2">Create Rocket 1</button>
+                <button @click="aparecer1 = !aparecer1" class="btn btn-warning col-auto mx-2">Create Rocket 1</button>
                 <button @click="aparecer2 = !aparecer2" class="btn btn-warning col-auto mx-2">Create Rocket 2</button>
             </div>
 
             <div class="row py-2">
-                <button @click="animar1" class="btn btn-warning col-auto mx-2">Accelerate rocket 1</button>
-                <button @click="animar2" class="btn btn-warning col-auto mx-2">Accelerate rocket 2</button>
+                <button @click="animar('idAnimacion1', 'animacion1')" class="btn btn-warning col-auto mx-2">Accelerate rocket 1</button>
+                <button @click="animar('idAnimacion2', 'animacion2')" class="btn btn-warning col-auto mx-2">Accelerate rocket 2</button>
 
-                <button @click="desAnimar1" class="btn btn-warning col-auto mx-2">Break rocket 1</button>
-                <button @click="desAnimar2" class="btn btn-warning col-auto mx-2">Break rocket 2</button>
+                <button @click="desAnimar('idAnimacion1','animacion1')" class="btn btn-warning col-auto mx-2">Break rocket 1</button>
+                <button @click="desAnimar('idAnimacion2','animacion2')" class="btn btn-warning col-auto mx-2">Break rocket 2</button>
             </div>
 
             <div class="row py-2">
@@ -41,8 +41,8 @@
 
           <div class="container">
 
-              <div v-show="aparecer1" class="my-2" id="idAnimacion1">oooooo</div>
-              <div v-show="aparecer2" class="my-2" id="idAnimacion2">oooooo</div>
+              <div v-show="aparecer1" class="my-2" id="idAnimacion1">1111111</div>
+              <div v-show="aparecer2" class="my-2" id="idAnimacion2">2222222</div>
 
           </div>
 
@@ -55,31 +55,23 @@
 <script lang="ts">
 
     import { Component, Vue } from 'vue-property-decorator';
+    import Vuex from 'vuex'
+
+    Vue.use(Vuex)
 
     @Component
     export default class Buttons extends Vue {
 
-      //aparecer1 = false;
-      //aparecer2 = false;
+      aparecer1 = this.$store.state.aparecer1
+      aparecer2 = this.$store.state.aparecer2
 
-      animar1(){
-        document.getElementById('idAnimacion1').classList.add('animacion1');
+      animar(a:any, b:any){
+        document.getElementById(a).classList.add(b);
       }
 
-      animar2(){
-        document.getElementById('idAnimacion2').classList.add('animacion2');
+      desAnimar(a:any,b:any){
+        document.getElementById(a).classList.remove(b);
       }
-
-      desAnimar1(){
-        document.getElementById('idAnimacion1').classList.remove('animacion1');
-      }
-
-      desAnimar2(){
-        document.getElementById('idAnimacion2').classList.remove('animacion2');
-      }
-
-
-
 
     }
 
