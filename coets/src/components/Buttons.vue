@@ -9,8 +9,8 @@
             <h2 class="text-danger pb-2">Rockets!</h2>
 
             <div class="row py-2">
-                <button @click="funAparecer1" class="btn btn-warning col-auto mx-2">Create Rocket 1</button>
-                <button @click="funAparecer2" class="btn btn-warning col-auto mx-2">Create Rocket 2</button>
+                <button @click="this.$store.state.aparecer1 = !this.$store.state.aparecer1" class="btn btn-warning col-auto mx-2">Create Rocket 1</button>
+                <button @click="aparecer2 = !aparecer2" class="btn btn-warning col-auto mx-2">Create Rocket 2</button>
             </div>
 
             <div class="row py-2">
@@ -31,9 +31,10 @@
               <router-link :to="{ name:'AllRockets'}" class="col-auto">
                 <button class="btn btn-warning"> Print all rockets</button>
               </router-link>
-
             </div>
-        </div>
+
+          </div>
+
         </div>
 
       <div>
@@ -43,14 +44,11 @@
               <div v-show="aparecer1" class="my-2" id="idAnimacion1">oooooo</div>
               <div v-show="aparecer2" class="my-2" id="idAnimacion2">oooooo</div>
 
-        </div>
-
+          </div>
 
       </div>
 
-
 </div>
-
 
 </template>
 
@@ -61,19 +59,8 @@
     @Component
     export default class Buttons extends Vue {
 
-      anim1HTML = (document.getElementById('idAnimacion1') as HTMLInputElement)!;
-      anim2HTML = (document.getElementById('idAnimacion2') as HTMLInputElement)!;
-
-      aparecer1 = false;
-      aparecer2 = false;
-
-      funAparecer1(){
-        return this.aparecer1 = true
-      }
-
-      funAparecer2(){
-        return this.aparecer2 = true
-      }
+      //aparecer1 = false;
+      //aparecer2 = false;
 
       animar1(){
         document.getElementById('idAnimacion1').classList.add('animacion1');

@@ -18,7 +18,11 @@ const store = new Vuex.Store({
       "name":"Endeavour",
       "codi": "LDSFJA32",
       "propulsors":[30, 40, 50, 50, 30, 10],
-      }]
+      }],
+
+      aparecer1: false,
+      aparecer2: false
+
   },
 
   getters:{
