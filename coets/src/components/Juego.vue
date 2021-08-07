@@ -29,7 +29,7 @@ interface WithRoute extends Vue{
 export default class Juego extends Vue {
 
 
-      myField: 'Not Fired Event Yet'
+      myField= 'Not Fired Event Yet'
     
     created() {
       myEventBus.$on(MyEventBusEvents.MyTestEvent, (text: string) =>
@@ -38,7 +38,7 @@ export default class Juego extends Vue {
     }
     
       eventFired(text: string) {
-       // this.myField = text;
+       this.myField = text;
       }
 
 
