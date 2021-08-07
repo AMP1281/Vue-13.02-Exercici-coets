@@ -1,13 +1,9 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import User from '@/store/modules/user'
 
 Vue.use(Vuex)
 
 const store = new Vuex.Store({
-  modules: {
-    User
-  },
 
   state:{
     test:"holaaa desde store",
