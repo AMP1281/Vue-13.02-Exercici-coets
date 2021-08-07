@@ -9,8 +9,8 @@
             <h2 class="text-danger pb-2">Rockets!</h2>
 
             <div class="row py-2">
-                <button @click="aparecer1:true" class="btn btn-warning col-auto mx-2">Create Rocket 1</button>
-                <button @click="aparecer2:true" class="btn btn-warning col-auto mx-2">Create Rocket 2</button>
+                <button @click="aparecer1 = true" class="btn btn-warning col-auto mx-2">Create Rocket 1</button>
+                <button @click="aparecer2 = true" class="btn btn-warning col-auto mx-2">Create Rocket 2</button>
             </div>
 
             <div class="row py-2">
