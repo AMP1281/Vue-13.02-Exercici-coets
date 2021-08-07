@@ -68,7 +68,7 @@
       aparecer1 = false
       aparecer2 = false
 
-      
+
     }
 
 
@@ -82,17 +82,33 @@
 
 <style scoped>
 
-.animacion{
+.animacion1{
     background-color: red;
     width: 200px;
     height: 200px;
-    animation-name: mianimacion;
+    animation-name: mianimacion1;
     animation-duration:4s;
     animation-iteration-count: infinite;
     position: relative;
 }
 
-@keyframes mianimacion {
+@keyframes mianimacion1 {
+
+    0% {left: 0; top: 0px;}
+    100% {left: 200vh; top: 0px;}
+}
+
+.animacion2{
+    background-color: red;
+    width: 200px;
+    height: 200px;
+    animation-name: mianimacion2;
+    animation-duration:4s;
+    animation-iteration-count: infinite;
+    position: relative;
+}
+
+@keyframes mianimacion2 {
 
     0% {left: 0; top: 0px;}
     100% {left: 200vh; top: 0px;}
