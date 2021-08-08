@@ -23,7 +23,9 @@ const store = new Vuex.Store({
       aparecer1: false,
       aparecer2: false,
 
-      arrayPropulsors:[]
+      arrayPropulsors:[],
+
+      testArray:["a"],
 
   },
 
@@ -44,8 +46,7 @@ const store = new Vuex.Store({
     },
 
     PotenciaMàxima: (state) => {
-      const propulsorsTest = state.coets.propulsors
-      return propulsorsTest.reduce((accumulator:any, currentValue:any) => {
+      return getPropulsors.reduce((accumulator:any, currentValue:any) => {
         return accumulator + currentValue;
       }, 0);
     },
