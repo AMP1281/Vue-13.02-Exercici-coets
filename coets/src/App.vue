@@ -1,6 +1,6 @@
 <template>
 
-  <div id="app" style="background: transparent">
+  <div id="app" style="background-color: rgb(53, 53, 53) !important">
 
     <router-view/>
 
@@ -16,13 +16,9 @@
 
 
 <style>
+
 html { 
- background: url(./assets/pexels-jakub-novacek-924824.jpg) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+ background-color: rgb(97, 96, 96) !important;
+ /* background-image: url(./assets/logo.png); */
 }
-
-
 </style>

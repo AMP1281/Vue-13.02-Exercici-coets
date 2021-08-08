@@ -26,3 +26,7 @@ import ButtonAnterior from '../components/ButtonAnterior.vue';
 })
 export default class About extends Vue {}
 </script>
+
+<style scoped>
+
+</style>

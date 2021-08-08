@@ -1,8 +1,8 @@
 <template>
 
-    <div>
+    <div class="container d-flex justify-content-center">
 
-        <button class="mt-4 btn btn-danger" @click="anterior()"> Enrere </button>
+        <button class="my-4 btn btn-danger display" @click="anterior()"> Enrere </button>
 
     </div>
 
@@ -30,3 +30,7 @@ export default class ButtonAnterior extends Vue {
 }
 
 </script>
+
+<style scoped>
+
+</style>

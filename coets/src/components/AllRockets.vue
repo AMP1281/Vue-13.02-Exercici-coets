@@ -1,59 +1,57 @@
  <template>
 
- <div class="container">
+ <div class="container w-100">
 
-     <h1>All Rockets</h1>
+    <ul class="row list-unstyled d-flex align-items-stretch justify-content-center align-items-center w-100">
 
-<ul class="row list-unstyled">
+        <li class="col-lg-4 mt-4  d-flex align-items-stretch w-100" 
+        v-for="(item, index) in AllCoets" :key="index">
 
-    <li class="col-lg-4 mt-4 d-flex align-items-stretch justify-content-center" 
-    v-for="(item, index) in AllCoets" :key="index">
+                            <b-card class="w-100 test border border-warning border border-5 rounded-3 px-1 mx-1">
 
-  <div class="RocketDetalles" style="width: 100%">
+                                <b-card-text class="d-flex flex-column align-items-center">
 
-    <div class="d-flex flex-column justify-content-start align-items-center w-100">
+                                    <h5 class="mb-4 fw-bold">   {{ item.name }}    </h5>
 
-                <b-card class="sombra w-100">
+                                        <div class="row w-100 my-2">
+                                            <div class="col-6 fw-bold">
+                                                id:
+                                            </div>
+                                            <div class="col-6">
+                                                {{ item.id }}
+                                            </div>
+                                        </div>
 
-                    <b-card-text class="d-flex flex-column align-items-center w-100 px-5 py-5">
+                                        <div class="row w-100 py-2">
+                                            <div class="col-6 fw-bold">
+                                                Code:
+                                            </div>
+                                            <div class="col-6">
+                                                {{ item.codi }}
+                                            </div>
+                                        </div>
+                                        <div class="row w-100 py-2">
+                                            <div class="col-6 fw-bold">
+                                                Boosters max power:
+                                            </div>
 
-                        <h5 class="mb-4">   {{item.name}}    </h5>
-                            <div class="row w-100 py-2">
-                                <div class="col-6">
-                                    id:
-                                </div>
-                                <div class="col-6">
-                                    {{item.id}}
-                                </div>
-                            </div>
-                            <div class="row w-100 py-2">
-                                <div class="col-6">
-                                    Code:
-                                </div>
-                                <div class="col-6">
-                                    {{item.codi}}
-                                </div>
-                            </div>
-                            <div class="row w-100 py-2">
-                                <div class="col-6">
-                                    Boosters max power:
-                                </div>
+                                            <div class="col-6 list-unstyled d-flex-row flex-wrap justify-content-center align-items-center">
+                                                <ul class="" v-for="a in item.propulsors" :key="a.id">
+                                                    <li class="d-flex"> {{ a }} </li>
+                                                </ul>
+                                            </div>
 
-                                <div class="col-6">
-                                   
-                                    <ul class="row list-unstyled" v-for="a in item.propulsors" :key="a.id">
-                                            <li class="row list-unstyled"> {{ a }} </li>
-                                    </ul>
-                                </div>
+                                        </div>
 
-                            </div>
-                    </b-card-text>
-                </b-card>
-    </div>
-  </div>
-</li>
-</ul>
+                                </b-card-text>
+
+                            </b-card>
+                
+            
+        </li>
+    </ul>
 </div>
+
 </template>
 
 <script lang="ts">
@@ -85,9 +83,9 @@ export default class AllRockets extends Vue {
 </script>
 
 <style scoped>
-.sombra {
-    box-shadow: 6px 6px 5px 1px #e7e5e5;
-    margin-top: 2rem;
-    width: 40%;
+
+.test{
+  border-width: 0.6vw !important;
 }
+
 </style>

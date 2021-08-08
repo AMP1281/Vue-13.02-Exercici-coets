@@ -28,3 +28,7 @@ import ButtonAnterior from '../components/ButtonAnterior.vue';
 
 export default class AllRocketsView extends Vue {}
 </script>
+
+<style>
+
+</style>
