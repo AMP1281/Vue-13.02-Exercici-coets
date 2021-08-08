@@ -41,9 +41,8 @@
 
           <div class="container">
 
-              <div v-show="aparecer1" class="my-2" id="idAnimacion1">1111111</div>
-              <div v-show="aparecer2" class="my-2" id="idAnimacion2">2222222</div>
-
+              <div v-show="aparecer1" class="my-2" id="idAnimacion1"><img src="../assets/coheteAGiradoCopia.png"/></div>
+              <div v-show="aparecer2" class="my-2" id="idAnimacion2"><img src="../assets/coheteBGirado.png"/></div>
           </div>
 
       </div>
@@ -110,6 +109,14 @@
 
     0% {left: 0; top: 0px;}
     100% {left: 200vh; top: 0px;}
+}
+
+html { 
+ background: url(../assets/pexels-jakub-novacek-924824.jpg) no-repeat center center fixed !important;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 </style>

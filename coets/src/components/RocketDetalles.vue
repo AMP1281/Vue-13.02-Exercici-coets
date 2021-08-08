@@ -1,6 +1,6 @@
  <template>
 
-  <div class="RocketDetalles" style="width: 100%">
+  <div class="RocketDetalles">
 
     <div class="d-flex flex-column justify-content-start align-items-center">
 
@@ -25,6 +25,14 @@
                             </div>
                             <div class="row w-100 py-2">
                                 <div class="col-6">
+                                    Maximum power:
+                                </div>
+                                <div class="col-6">
+                                    {{sumaPropulsors}}
+                                </div>
+                            </div>
+                            <div class="row w-100 py-2">
+                                <div class="col-6">
                                     Boosters max power:
                                 </div>
                                 <div class="col-6">
@@ -40,11 +48,14 @@
                     </b-card-text>
                 </b-card>
 
-                {{getPropulsorssss}}
+          
+ 
+             
+         
 
-            
 
     </div>
+    {{arrayPropulsors}}
   </div>
 </template>
 
@@ -65,19 +76,24 @@ interface WithRoute extends Vue{
 @Component
 export default class User extends Vue {
 
+
+
     $route: any
     coet: any=''
-    test: any[]=[]
-
-
+    arrayPropulsors: any[]=[]
+    sumaPropulsors: number;
     id=this.$route.params.id
 
     arrayDetalles:any[]= this.$store.getters['getCoets'](this.id)
 
-    getPropulsorssss(){
-       return this.arrayDetalles.map((coets) => coets.propulsors);
+    mounted(){
+        this.arrayPropulsors = this.arrayDetalles.propulsors
+        this.sumaPropulsors = this.arrayPropulsors.reduce((accumulator:any, currentValue:any) => {
+        return accumulator + currentValue;
+      }, 0);
     }
 
+    
 
 }
 
@@ -89,4 +105,13 @@ export default class User extends Vue {
     margin-top: 2rem;
     width: 40%;
 }
+
+html { 
+ background: url(../assets/pexels-jakub-novacek-924824.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 </style>

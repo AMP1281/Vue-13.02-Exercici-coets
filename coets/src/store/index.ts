@@ -45,13 +45,6 @@ const store = new Vuex.Store({
        return state.coets.map((coets) => coets.propulsors)
     },
 
-    PotenciaMàxima: (state) => {
-      return getPropulsors.reduce((accumulator:any, currentValue:any) => {
-        return accumulator + currentValue;
-      }, 0);
-    },
-
-
   },
 
 })
